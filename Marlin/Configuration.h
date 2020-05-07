@@ -1758,7 +1758,7 @@
 //
 // Short 2KHz beep when endstops are hit
 //
-#define ENDSTOP_BEEP //good to hear that the pins are properly defined
+#define ENDSTOP_BEEP //good to hear when the pins are properly defined
 
 //
 // The duration and frequency for the UI feedback sound.
