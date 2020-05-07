@@ -71,7 +71,7 @@
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "(davidramiro)" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "(dalton0190_forked_from_davidramiro)" // Who made the changes.
 
 /**
  * *** VENDORS PLEASE READ ***
@@ -131,7 +131,7 @@
 #endif
 
 // Name displayed in the LCD "Ready" message and Info menu
-//#define CUSTOM_MACHINE_NAME "Anycubic i3 Mega S"
+#define CUSTOM_MACHINE_NAME "Anycubic i3 Mega S"
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like http://www.uuidgenerator.net/version4
@@ -482,15 +482,10 @@
 
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
 
-  // i3 Mega S stock config
-  #define  DEFAULT_Kp 9.98
-  #define  DEFAULT_Ki 0.50
-  #define  DEFAULT_Kd 50.07
-
-  // i3 Mega stock v5 hotend, 40W heater cartridge (3.6Ω @ 22°C)
-  // #define  DEFAULT_Kp 15.94
-  // #define  DEFAULT_Ki 1.17
-  // #define  DEFAULT_Kd 54.19
+  // Daltons i3 Mega S stock hotend
+  #define  DEFAULT_Kp 10.18
+  #define  DEFAULT_Ki 0.52
+  #define  DEFAULT_Kd 49.82
 
   // Ultimaker
   // #define DEFAULT_Kp 22.2
@@ -542,16 +537,10 @@
   //#define MIN_BED_POWER 0
   //#define PID_BED_DEBUG // Sends debug data to the serial port.
 
-  //Anycubic i3 Mega Ultrabase
-  #define DEFAULT_bedKp 61.62
-  #define DEFAULT_bedKi 11.75
-  #define DEFAULT_bedKd 215.38
-
-  //Anycubic i3 Mega Ultrabase (0.9Ω @ 22°C)
-  //#define DEFAULT_bedKp 251.78
-  //#define DEFAULT_bedKi 49.57
-  //#define DEFAULT_bedKd 319.73
-
+  //Daltons i3 Mega S stock Ultrabase
+  #define DEFAULT_bedKp 60.31
+  #define DEFAULT_bedKi 11.50
+  #define DEFAULT_bedKd 210.80
 
   //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   //from pidautotune
@@ -665,7 +654,7 @@
 #define Z_MIN_ENDSTOP_INVERTING true // set to true to invert the logic of the endstop.
 #define X_MAX_ENDSTOP_INVERTING true // set to true to invert the logic of the endstop.
 #define Y_MAX_ENDSTOP_INVERTING true // set to true to invert the logic of the endstop.
-#define Z_MAX_ENDSTOP_INVERTING true // set to true to invert the logic of the endstop.
+#define Z_MAX_ENDSTOP_INVERTING false // set to true to invert the logic of the endstop.
 #define Z_MIN_PROBE_ENDSTOP_INVERTING true // set to true to invert the logic of the probe.
 
 /**
@@ -751,7 +740,7 @@
  * Override with M203
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 500, 500, 6, 30 }
+#define DEFAULT_MAX_FEEDRATE          { 500, 500, 8, 60 }
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
@@ -780,7 +769,7 @@
  *   M204 T    Travel Acceleration
  */
 #define DEFAULT_ACCELERATION          1500    // X, Y, Z and E acceleration for printing moves
-#define DEFAULT_RETRACT_ACCELERATION  1500    // E acceleration for retracts
+#define DEFAULT_RETRACT_ACCELERATION  3000    // E acceleration for retracts
 #define DEFAULT_TRAVEL_ACCELERATION   3000    // X, Y, Z acceleration for travel (non printing) moves
 
 /**
@@ -1769,7 +1758,7 @@
 //
 // Short 2KHz beep when endstops are hit
 //
-//#define ENDSTOP_BEEP
+#define ENDSTOP_BEEP //good to hear that the pins are properly defined
 
 //
 // The duration and frequency for the UI feedback sound.
